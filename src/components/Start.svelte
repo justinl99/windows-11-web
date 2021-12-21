@@ -33,7 +33,7 @@
     class="text-white text-xs bg-black bg-opacity-10 h-16 border-t border-white border-opacity-20 flex flex-row items-center px-16 gap-3"
   >
     <!-- svelte-ignore a11y-missing-attribute -->
-    <img src="profile.jpg" class="h-8 w-8 rounded-full" />
+    <img src="Screenshot 2021-08-18 155022.jpeg.png" class="h-8 w-8 rounded-full" />
     <p class="flex-1">JustinL</p>
     <button
       class="relative p-3 w-11 h-11 rounded-md hover:(bg-white bg-opacity-5)"
