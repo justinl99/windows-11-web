@@ -1,4 +1,4 @@
-# Windows 11 made with Svelte
+# Windows 11 on the web
 
 This project uses Svelte, TypeScript, Vite, ESLint, Prettier and Windi CSS.
 
