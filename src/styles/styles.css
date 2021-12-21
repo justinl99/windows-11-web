@@ -1,0 +1,44 @@
+@import url('http://fonts.cdnfonts.com/css/segoe-ui-variable');
+
+* {
+  font-family: 'Segoe UI Variable', sans-serif;
+  cursor: default !important;
+  user-select: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*:focus {
+  outline: none !important;
+}
+
+@supports (backdrop-filter: blur(30px)) {
+  .glass,
+  .window {
+    background-color: #2d2d2f9d;
+    backdrop-filter: blur(30px);
+  }
+}
+
+@supports not (backdrop-filter: blur(30px)) {
+  .glass,
+  .window {
+    background-color: #2d2d2f;
+  }
+}
+
+.glass.no-transparency,
+.window.no-transparency {
+  background-color: #2d2d2f;
+}
+
+.window,
+.window-border {
+  box-shadow: inset 0px 0px 2px 0px rgba(255, 255, 255, 0.3);
+}
