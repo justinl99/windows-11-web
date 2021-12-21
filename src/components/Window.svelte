@@ -98,7 +98,7 @@
       bind:clientHeight={height}
       style={`height: 1px; resize: both; min-width: ${width}px; min-height: ${height}px`}
     >
-      <h1 class="mt-20 text-center text-xl text-white">WIP 😉</h1>
+      <h1 class="mt-20 text-center text-xl text-white">App coming soon</h1>
     </main>
   </div>
 </div>
