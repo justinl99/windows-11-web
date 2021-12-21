@@ -34,7 +34,7 @@
   >
     <!-- svelte-ignore a11y-missing-attribute -->
     <img src="profile.jpg" class="h-8 w-8 rounded-full" />
-    <p class="flex-1">Emanuele Pavanello</p>
+    <p class="flex-1">JustinL</p>
     <button
       class="relative p-3 w-11 h-11 rounded-md hover:(bg-white bg-opacity-5)"
       on:click={() => {
