@@ -23,6 +23,13 @@
   }
   let programs: Program[] = [
     {
+      name: 'search',
+      tille: 'Search',
+      icon: 'search.png',
+      isMinimized: false,
+      isOpen: false
+    },
+    {
       name: 'widget',
       tille: 'Widget',
       icon: 'widget.png',
