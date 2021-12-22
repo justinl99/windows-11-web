@@ -10,6 +10,7 @@
   import Widget from '$components/widget.js'
 
   let startIsOpen = false
+  let widgetIsOpen = false
 
   interface Program {
     index: number
@@ -102,7 +103,8 @@
       hideIndicator={true}
       on:click={() => {
         startIsOpen = !startIsOpen
-      }},
+       }},
+    <DockIcon
       icon="widget.png"
       open={widgetIsOpen}
       hideIndicator={true}
