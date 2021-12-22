@@ -7,6 +7,7 @@
   import DockIcon from '$components/DockIcon.svelte'
   import Start from '$components/Start.svelte'
   import Window from '$components/Window.svelte'
+  import Widget from '$components/widget.js'
 
   let startIsOpen = false
 
@@ -22,6 +23,13 @@
     top: number
   }
   let programs: Program[] = [
+    {
+      name: 'widget',
+      title: 'Widget',
+      icon: 'widget.png',
+      isMinimized: false,
+      isOpen: false
+    },
     {
       name: 'explorer',
       title: 'File Explorer',
