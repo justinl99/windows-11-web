@@ -24,14 +24,14 @@
   let programs: Program[] = [
     {
       name: 'search',
-      tille: 'Search',
+      title: 'Search',
       icon: 'search.png',
       isMinimized: false,
       isOpen: false
     },
     {
       name: 'widget',
-      tille: 'Widget',
+      title: 'Widget',
       icon: 'widget.png',
       isMinimized: false,
       isOpen: false
@@ -47,6 +47,13 @@
       name: 'edge',
       title: 'Edge',
       icon: 'edge.png',
+      isMinimized: false,
+      isOpen: false
+    },
+    {
+      name: 'notepad'
+      title: 'Notepad'
+      icon: 'notepad.png'
       isMinimized: false,
       isOpen: false
     }
