@@ -56,6 +56,13 @@
       icon: 'notepad.png',
       isMinimized: false,
       isOpen: false
+    },
+    {
+      name: 'settings',
+      title: 'Settings',
+      icon: 'settings.png',
+      isMinimized: false,
+      isOpen: false
     }
   ].map((program, index) => ({
     ...program,
