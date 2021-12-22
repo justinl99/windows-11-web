@@ -23,6 +23,13 @@
   }
   let programs: Program[] = [
     {
+      name: 'widget',
+      tille: 'Widget',
+      icon: 'widget.png',
+      isMinimized: false,
+      isOpen: false
+    },
+    {
       name: 'explorer',
       title: 'File Explorer',
       icon: 'explorer.png',
@@ -95,13 +102,6 @@
       hideIndicator={true}
       on:click={() => {
         startIsOpen = !startIsOpen
-       }},
-    <DockIcon
-      icon="widget.png"
-      open={widgetIsOpen}
-      hideIndicator={true}
-      on:click={() => {
-        widgetIsOpen = !widgetIsOpen
        }}
      />
       {#each programs.sort((p1, p2) => p1.index - p2.index) as program (program.name)}
