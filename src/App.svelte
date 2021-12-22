@@ -7,10 +7,8 @@
   import DockIcon from '$components/DockIcon.svelte'
   import Start from '$components/Start.svelte'
   import Window from '$components/Window.svelte'
-  import Widget from '$components/widget.js'
 
   let startIsOpen = false
-  let widgetIsOpen = false
 
   interface Program {
     index: number
@@ -86,12 +84,6 @@
     <Start
       on:close={() => {
         startIsOpen = false
-      }}
-    />
-  {#if widgetIsOpen}
-    <Widget
-      on:close={() => {
-        widgetIsOpen = false
       }}
     />
     {/if}
