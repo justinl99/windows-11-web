@@ -51,9 +51,9 @@
       isOpen: false
     },
     {
-      name: 'notepad'
-      title: 'Notepad'
-      icon: 'notepad.png'
+      name: 'notepad',
+      title: 'Notepad',
+      icon: 'notepad.png',
       isMinimized: false,
       isOpen: false
     }
