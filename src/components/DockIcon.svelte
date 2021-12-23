@@ -1,53 +1,184 @@
-<script lang="ts">
-  export let icon: string
-  // Indicate that current application is focused
-  export let active = false
-  // Indicate that current application is open (show indicator)
-  export let open = false
-  export let hideIndicator = false
-</script>
+.taskbar {
+  --bg1: rgba(243, 243, 243, 0.85);
+  --bg2: rgba(255, 255, 255, 0.67);
 
-<div class="w-12 h-12 relative">
-  <button
-    on:click
-    class="m-1 p-2 bg-transparent rounded-md hover:(bg-white bg-opacity-7)"
-    class:active
-    class:open={open && !hideIndicator}
-  >
-    <!-- svelte-ignore a11y-missing-attribute -->
-    <img src={icon} class="transform transition-transform" />
-  </button>
-  {#if !hideIndicator}
-    <div class="absolute bottom-0 mb-1.5 w-full flex flex-row justify-center">
-      <div
-        class="h-0.75 rounded-full transition-all duration-300"
-        class:indicator-empty={!open}
-        class:indicator-active={open && active}
-        class:indicator-inactive={open && !active}
-      />
-    </div>
-  {/if}
-</div>
+  position: absolute;
+  width: 100vw;
+  height: 48px;
+  color: var(--dark-txt);
+  background: var(--bg1);
+  -webkit-backdrop-filter: saturate(3) blur(20px);
+  backdrop-filter: saturate(3) blur(20px);
+  bottom: 0;
+  z-index: 10000;
+}
 
-<style>
-  .indicator-empty {
-    @apply w-0;
+body[data-theme="dark"] {
+  .taskbar {
+    --bg1: rgba(32, 32, 32, 0.75);
+    --bg2: rgba(255, 255, 255, 0.1);
   }
-  .indicator-active {
-    @apply w-3.5 bg-[#56BFF8];
+
+  .taskIcon,
+  .searchIcon img {
+    filter: invert(1);
   }
-  .indicator-inactive {
-    @apply w-1.5 bg-white bg-opacity-50;
+}
+
+.battery {
+  display: inline-block;
+  position: relative;
+  display: flex;
+
+  i {
+    color: #232323;
   }
-  .active {
-    @apply bg-white bg-opacity-7;
+
+  .uicon {
+    position: absolute;
+    margin-top: -24%;
+    margin-left: -12%;
+    z-index: 1;
+    filter: drop-shadow(1px 1px #fefefe) invert(0.14);
+    transform: scale(0.8, 0.72);
   }
-  .open {
+}
+
+.battery .fa {
+  font: normal normal normal FontAwesome;
+  font-size: 13px;
+}
+
+.battery .animate {
+  position: absolute;
+  overflow: hidden;
+  z-index: 0;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.taskcont {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.taskright {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: auto;
+  height: 100%;
+  margin-left: 10px;
+  display: flex;
+}
+
+.taskIcon {
+  width: 24px;
+
+  svg {
+    color: #303030;
   }
-  button:hover {
-    box-shadow: inset 0px 1px 2px -2px white;
+}
+
+.taskDate {
+  display: flex;
+  padding: 0 8px;
+  font-size: 11px;
+  flex-direction: column;
+  justify-content: center;
+
+  div {
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
   }
-  button:active > img {
-    @apply scale-75;
+}
+
+.tasksCont {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &[data-side="center"] {
+    align-items: center;
   }
-</style>
+
+  &[data-side="left"] {
+    align-items: flex-start;
+  }
+}
+
+.tsbar {
+  width: auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  transition: all ease-in-out 200ms;
+}
+
+.tsIcon {
+  position: relative;
+  width: 38px;
+  height: 38px;
+  margin: auto 3px;
+  box-sizing: border-box;
+  border-radius: 0;
+  background: rgba(254, 254, 254, 0);
+  transform-origin: center;
+  animation: popintro 800ms ease-in-out;
+  border-radius: 4px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    display: block;
+    bottom: 0;
+    width: 0px;
+    height: 3px;
+    border-radius: 4px;
+    background: #858585;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &[data-open="true"]:after {
+    width: 6px;
+  }
+
+  &[data-active="true"]:after {
+    width: 12px;
+    background: var(--clrPrm);
+  }
+
+  &:hover,
+  &[data-active="true"] {
+    background: var(--bg2);
+    transition: all 0.2s ease-in-out;
+  }
+}
+
+.graybd {
+  border: solid 1px transparent;
+  height: 1rem;
+}
+.graybd:hover {
+  border: solid 1px #a1a1a1;
+  border-width: 0 0 0 2px;
+}
+
+@keyframes popintro {
+  0% {
+    transform: scale(0);
+  }
+  40% {
+    transform: scale(1.125);
+  }
+  70% {
+    transform: scale(0.725);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
